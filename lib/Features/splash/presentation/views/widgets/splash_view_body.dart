@@ -1,4 +1,5 @@
 import 'package:books_app/core/utils/assets.dart';
+import 'package:books_app/features/splash/presentation/views/widgets/sliding_text.dart';
 import 'package:flutter/material.dart';
 
 class SplashViewBody extends StatefulWidget {
@@ -16,21 +17,13 @@ class _SplashViewBodyState extends State<SplashViewBody>
   void initState() {
     super.initState();
 
-    animationController = AnimationController(
-      vsync: this,
-      duration: Duration(seconds: 1),
-    );
-
-    slidingAnimation = Tween<Offset>(
-      begin: const Offset(0, 2),
-      end: Offset.zero,
-    ).animate(animationController);
-    animationController.forward();
+    initSlidingAnimation();
   }
+
+  
 
   @override
   void dispose() {
-    // TODO: implement dispose
     super.dispose();
     animationController.dispose();
   }
@@ -43,16 +36,24 @@ class _SplashViewBodyState extends State<SplashViewBody>
       children: [
         Image.asset(AssetsData.logo),
         const SizedBox(height: 4),
-        AnimatedBuilder(
-          animation: slidingAnimation,
-          builder: (context, _) {
-            return SlideTransition(
-              position: slidingAnimation,
-              child: const Text('Read Free Books', textAlign: TextAlign.center),
-            );
-          },
-        ),
+        SlidingText(slidingAnimation: slidingAnimation),
       ],
     );
   }
+
+
+
+  void initSlidingAnimation() {
+     animationController = AnimationController(
+      vsync: this,
+      duration: Duration(seconds: 1),
+    );
+    
+    slidingAnimation = Tween<Offset>(
+      begin: const Offset(0, 2),
+      end: Offset.zero,
+    ).animate(animationController);
+    animationController.forward();
+  }
 }
+
