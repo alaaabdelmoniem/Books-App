@@ -17,7 +17,7 @@ class BooksApp extends StatelessWidget {
       theme: ThemeData.dark().copyWith(scaffoldBackgroundColor: kPrimaryColor),
       debugShowCheckedModeBanner: false,
 
-      home: SplashView(),
+      home: const SplashView(),
     );
   }
 }
