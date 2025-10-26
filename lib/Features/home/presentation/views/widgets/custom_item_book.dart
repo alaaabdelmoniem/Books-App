@@ -6,8 +6,8 @@ class CustomBookItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: MediaQuery.of(context).size.height * .3,
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 8.0),
       child: AspectRatio(
         aspectRatio: 2.8 / 4,
         child: Container(
@@ -16,7 +16,6 @@ class CustomBookItem extends StatelessWidget {
             color: Colors.red,
             image: const DecorationImage(
               image: AssetImage(AssetsData.testImage),
-
               fit: BoxFit.fill,
             ),
           ),
