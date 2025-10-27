@@ -1,4 +1,5 @@
 import 'package:books_app/Features/home/presentation/views/widgets/best_seller_list_view_item.dart';
+import 'package:books_app/constants.dart';
 import 'package:books_app/core/utils/styles.dart';
 import 'package:books_app/features/home/presentation/views/widgets/Books_list_view.dart';
 import 'package:flutter/material.dart';
@@ -9,18 +10,22 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.symmetric(horizontal: 16),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          CustomAppBar(),
-          BooksListView(),
-          SizedBox(height: 50),
-          Text('Best Seller', style: Styles.titleMedium),
-          BestSellerListViewItem(),
+          const CustomAppBar(),
+          const BooksListView(),
+          const SizedBox(height: 50),
+          Text(
+            'Best Seller',
+            style: Styles.textStyle18.copyWith(fontFamily: kGtSectraFine),
+          ),
+          const BestSellerListViewItem(),
         ],
       ),
     );
   }
 }
+// 
