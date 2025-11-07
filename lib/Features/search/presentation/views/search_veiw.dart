@@ -1,4 +1,4 @@
-import 'package:books_app/Features/search/presentation/views/widgets/search_view_Body.dart';
+import 'package:books_app/Features/search/presentation/views/widgets/search_view_body.dart';
 import 'package:flutter/material.dart';
 
 class SearchVeiw extends StatelessWidget {
