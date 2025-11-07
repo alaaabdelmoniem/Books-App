@@ -1,4 +1,3 @@
-
 import 'package:books_app/Features/home/presentation/views/widgets/custom_item_book.dart';
 import 'package:flutter/material.dart';
 
@@ -12,6 +11,7 @@ class SimilarBooksListView extends StatelessWidget {
 
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
+        itemCount: 15,
         itemBuilder: (context, indx) {
           return const Padding(
             padding: EdgeInsets.symmetric(horizontal: 5.0),
