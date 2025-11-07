@@ -32,7 +32,7 @@ class HomeViewBody extends StatelessWidget {
               ],
             ),
           ),
-        const  BestSellerListView(),
+          const BestSellerListView(),
         ],
       ),
     );

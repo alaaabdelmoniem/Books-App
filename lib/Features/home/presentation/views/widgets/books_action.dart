@@ -15,17 +15,17 @@ class BooksAction extends StatelessWidget {
               textColor: Colors.black,
               backgroundcolor: Colors.white,
               borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(12),
-                bottomLeft: Radius.circular(12),
+                topLeft: Radius.circular(14),
+                bottomLeft: Radius.circular(14),
               ),
               text: '19.99 €',
               fontSize: 19,
             ),
           ),
+          
           Expanded(
             child: CustomButton(
               text: 'Free Preview',
-
               textColor: Colors.white,
               backgroundcolor: Color(0xFFEF8262),
               borderRadius: BorderRadius.only(
