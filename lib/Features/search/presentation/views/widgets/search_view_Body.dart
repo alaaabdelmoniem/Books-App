@@ -1,5 +1,5 @@
-import 'package:books_app/Features/home/presentation/views/widgets/book_list_view_item.dart';
 import 'package:books_app/Features/search/presentation/views/widgets/custom_search_text_field.dart';
+import 'package:books_app/Features/search/presentation/views/widgets/search_result_list_view.dart';
 import 'package:books_app/constants.dart';
 import 'package:books_app/core/utils/styles.dart';
 import 'package:flutter/material.dart';
@@ -26,20 +26,6 @@ class SearchViewBody extends StatelessWidget {
           const SizedBox(height: 20),
           const Expanded(child: SearchResultListView()),
         ],
-      ),
-    );
-  }
-}
-
-class SearchResultListView extends StatelessWidget {
-  const SearchResultListView({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return ListView.builder(
-      itemBuilder: (context, indx) => const Padding(
-        padding: EdgeInsets.symmetric(vertical: 10),
-        child: BookListViewItem(),
       ),
     );
   }
