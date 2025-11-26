@@ -3,6 +3,7 @@ import 'package:books_app/Features/home/data/repos/home_repo.dart';
 import 'package:books_app/core/utils/api_service.dart';
 import 'package:books_app/core/utils/errors/failures.dart';
 import 'package:dartz/dartz.dart';
+import 'package:dio/dio.dart';
 
 class HomeRpoImplemention implements HomeReop {
   ApiService apiService;
@@ -20,7 +21,10 @@ class HomeRpoImplemention implements HomeReop {
       }
       return Right(books);
     } catch (e) {
-      return Left(ServerFailure());
+      if (e is DioException) {
+        return Left(ServerFailure.fromDioException(e));
+      }
+      return Left(ServerFailure(errorMessage: e.toString()));
     }
   }
 
