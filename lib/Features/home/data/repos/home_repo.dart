@@ -3,6 +3,6 @@ import 'package:books_app/core/utils/errors/failures.dart';
 import 'package:dartz/dartz.dart';
 
 abstract class HomeReop {
-  Future<Either<Failures, List<BookModel>>> fetchBestSellerBooks();
+  Future<Either<Failures, List<BookModel>>> fetchNewstBooks();
   Future<Either<Failures, List<BookModel>>> fetchFeaturedBooks();
 }
