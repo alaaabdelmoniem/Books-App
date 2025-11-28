@@ -9,7 +9,7 @@ class HomeRpoImplemention implements HomeReop {
   ApiService apiService;
   HomeRpoImplemention({required this.apiService});
   @override
-  Future<Either<Failures, List<BookModel>>> fetchNewstBooks() async {
+  Future<Either<Failures, List<BookModel>>> fetchNewsetBooks() async {
     try {
       var data = await apiService.get(
         endPoint:
@@ -32,8 +32,7 @@ class HomeRpoImplemention implements HomeReop {
   Future<Either<Failures, List<BookModel>>> fetchFeaturedBooks() async {
     try {
       var data = await apiService.get(
-        endPoint:
-            'volumes?q=subject:programming&filter =free-ebooks',
+        endPoint: 'volumes?q=subject:programming&filter =free-ebooks',
       );
       List<BookModel> books = [];
       for (var item in data['items']) {
