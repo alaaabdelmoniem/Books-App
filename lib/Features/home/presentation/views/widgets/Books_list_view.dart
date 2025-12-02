@@ -1,7 +1,7 @@
 import 'package:books_app/Features/home/presentation/manager/Featured_books_cubit/featured_books_cubit.dart';
+import 'package:books_app/Features/home/presentation/views/widgets/custom_book_item.dart';
 import 'package:books_app/core/widgets/custom_error_widget.dart';
 import 'package:books_app/core/widgets/custom_loading_indicator.dart';
-import 'package:books_app/features/home/presentation/views/widgets/custom_item_book.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -17,12 +17,18 @@ class BooksListView extends StatelessWidget {
             height: MediaQuery.of(context).size.height * .3,
 
             child: ListView.builder(
+              physics:const BouncingScrollPhysics(),
               scrollDirection: Axis.horizontal,
-              itemCount: 15,
+              itemCount: state.books.length,
               itemBuilder: (context, indx) {
-                return const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 8.0),
-                  child: CustomBookItem(),
+              
+                return Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                  child: CustomBookItem(
+                    imageUrl:
+                        (state.books[indx].volumeInfo?.imageLinks?.thumbnail) ??
+                        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4OiY0zeiskXGyTGHlVkmvaEhNS0hdytDzPg&s',
+                  ),
                 );
               },
             ),

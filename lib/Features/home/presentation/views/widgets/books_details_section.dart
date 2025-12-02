@@ -1,7 +1,6 @@
-
 import 'package:books_app/Features/home/presentation/views/widgets/book_rating.dart';
 import 'package:books_app/Features/home/presentation/views/widgets/books_action.dart';
-import 'package:books_app/Features/home/presentation/views/widgets/custom_item_book.dart';
+import 'package:books_app/Features/home/presentation/views/widgets/custom_book_item.dart';
 import 'package:books_app/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
@@ -16,7 +15,10 @@ class BooksDetailsSection extends StatelessWidget {
       children: [
         Padding(
           padding: EdgeInsets.symmetric(horizontal: width * .19),
-          child: const CustomBookItem(),
+          child: const CustomBookItem(
+            imageUrl:
+                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4OiY0zeiskXGyTGHlVkmvaEhNS0hdytDzPg&s',
+          ),
         ),
         const SizedBox(height: 40),
         const Text('The Jungle Book', style: Styles.textStyle30),
@@ -40,4 +42,3 @@ class BooksDetailsSection extends StatelessWidget {
     );
   }
 }
-
