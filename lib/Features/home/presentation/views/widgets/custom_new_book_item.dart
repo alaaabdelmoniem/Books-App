@@ -1,15 +1,15 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
-class CustomBookItem extends StatefulWidget {
-  const CustomBookItem({super.key, required this.imageUrl});
+class CustomNewBookItem extends StatefulWidget {
+  const CustomNewBookItem({super.key, required this.imageUrl});
   final String imageUrl;
 
   @override
-  State<CustomBookItem> createState() => _CustomBookItemState();
+  State<CustomNewBookItem> createState() => _CustomNewBookItemState();
 }
 
-class _CustomBookItemState extends State<CustomBookItem>
+class _CustomNewBookItemState extends State<CustomNewBookItem>
     with SingleTickerProviderStateMixin {
   late AnimationController animationController;
   @override
@@ -35,9 +35,9 @@ class _CustomBookItemState extends State<CustomBookItem>
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
-      borderRadius: BorderRadiusGeometry.circular(15),
+      borderRadius: BorderRadiusGeometry.circular(8),
       child: AspectRatio(
-        aspectRatio: 2.6 / 4,
+        aspectRatio: 2.5 / 4,
         child: CachedNetworkImage(
           fit: BoxFit.fill,
           imageUrl: widget.imageUrl,

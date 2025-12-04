@@ -22,7 +22,7 @@ class HomeViewBody extends StatelessWidget {
                 const BooksListView(),
                 const SizedBox(height: 50),
                 Text(
-                  'Best Seller',
+                  'Newest Books',
                   style: Styles.textStyle18.copyWith(
                     fontFamily: kGtSectraFine,
                     fontSize: 21,

@@ -6,7 +6,12 @@ class BookRating extends StatelessWidget {
   const BookRating({
     super.key,
     this.mainAxisAlignment = MainAxisAlignment.start,
+    required this.count,
+    required this.averageRating,
   });
+  final int count;
+  final int averageRating;
+
   final MainAxisAlignment mainAxisAlignment;
   @override
   Widget build(BuildContext context) {
@@ -19,13 +24,13 @@ class BookRating extends StatelessWidget {
           size: 17,
         ),
         const SizedBox(width: 6.3),
-        const Text('4.8', style: Styles.textStyle16),
+        Text('$averageRating', style: Styles.textStyle16),
         const SizedBox(width: 5),
 
         Opacity(
           opacity: .5,
           child: Text(
-            '(2556)',
+            '($count)',
             style: Styles.textStyle14.copyWith(
               color: Colors.white,
               fontSize: 16,
