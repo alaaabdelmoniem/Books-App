@@ -35,7 +35,7 @@ class HomeRpoImplemention implements HomeReop {
       );
       List<BookModel> books = [];
       for (var item in data['items']) {
-        books.add(BookModel.fromJson(item));         
+        books.add(BookModel.fromJson(item));
       }
       return Right(books);
     } catch (e) {
@@ -44,5 +44,28 @@ class HomeRpoImplemention implements HomeReop {
       }
       return Left(ServerFailure(errorMessage: e.toString()));
     }
+  }
+
+  @override
+  Future<Either<Failures, List<BookModel>>> fetchSimilarBooks({
+    required String category,
+  }) async {
+    try {
+      var data = await apiService.get(
+        endPoint:
+            'volumes?q=sports&filter =free-ebooks&orderBy =newest&Sorting=relevance ',
+      );
+      List<BookModel> books = [];
+      for (var item in data['items']) {
+        books.add(BookModel.fromJson(item));
+      }
+      return Right(books);
+    } catch (e) {
+      if (e is DioException) {
+        return Left(ServerFailure.fromDioException(e));
+      }
+      return Left(ServerFailure(errorMessage: e.toString()));
+    }
+    
   }
 }
