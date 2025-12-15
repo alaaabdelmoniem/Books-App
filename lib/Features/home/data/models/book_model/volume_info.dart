@@ -23,7 +23,7 @@ class VolumeInfo extends Equatable {
   final String? previewLink;
   final String? infoLink;
   final String? canonicalVolumeLink;
-  final int? averageRating;
+  final num? averageRating;
   final int? ratingCount;
   const VolumeInfo({
     this.title,
@@ -76,7 +76,7 @@ class VolumeInfo extends Equatable {
     infoLink: json['infoLink'] as String?,
     canonicalVolumeLink: json['canonicalVolumeLink'] as String?,
     ratingCount: json['ratingsCount'] as int?,
-    averageRating: json['averageRating'] as int?,
+    averageRating: json['averageRating'] ,
   );
 
   Map<String, dynamic> toJson() => {
