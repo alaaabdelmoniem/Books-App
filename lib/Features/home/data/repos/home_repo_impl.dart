@@ -12,7 +12,7 @@ class HomeRpoImplemention implements HomeReop {
   Future<Either<Failures, List<BookModel>>> fetchNewsetBooks() async {
     try {
       var data = await apiService.get(
-        endPoint: 'volumes?q=sports&filter =free-ebooks&orderBy =newest',
+        endPoint: 'volumes?q=programming&filter =free-ebooks&orderBy =newest',
       );
       List<BookModel> books = [];
       for (var item in data['items']) {
@@ -53,7 +53,7 @@ class HomeRpoImplemention implements HomeReop {
     try {
       var data = await apiService.get(
         endPoint:
-            'volumes?q=sports&filter =free-ebooks&orderBy =newest&Sorting=relevance ',
+            'volumes?q=$category&filter =free-ebooks&orderBy =newest&Sorting=relevance ',
       );
       List<BookModel> books = [];
       for (var item in data['items']) {
@@ -66,6 +66,5 @@ class HomeRpoImplemention implements HomeReop {
       }
       return Left(ServerFailure(errorMessage: e.toString()));
     }
-    
   }
 }
